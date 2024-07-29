@@ -3,8 +3,8 @@
 ;;; Code:
 
 (when *is-a-mac*
-  (setq mac-command-modifier 'meta)
-  (setq mac-option-modifier 'none)
+  (setq mac-command-modifier 'super)
+  (setq mac-option-modifier 'meta)
   ;; Make mouse wheel / trackpad scrolling less jerky
   (setq mouse-wheel-scroll-amount '(1
                                     ((shift) . 5)
@@ -12,12 +12,19 @@
   (dolist (multiple '("" "double-" "triple-"))
     (dolist (direction '("right" "left"))
       (global-set-key (read-kbd-macro (concat "<" multiple "wheel-" direction ">")) 'ignore)))
-  (global-set-key (kbd "M-`") 'ns-next-frame)
-  (global-set-key (kbd "M-h") 'ns-do-hide-emacs)
-  (global-set-key (kbd "M-˙") 'ns-do-hide-others)
-  (with-eval-after-load 'nxml-mode
-    (define-key nxml-mode-map (kbd "M-h") nil))
-  (global-set-key (kbd "M-ˍ") 'ns-do-hide-others) ;; what describe-key reports for cmd-option-h
+  (setq mac-alternate-modifier 'meta)
+  (setq mac-control-modifier 'control)
+  (setq mac-function-modifier 'hyper)
+  (setq mac-right-command-modifier 'left)
+  (setq mac-right-alternate-modifier 'left)
+  (setq mac-right-option-modifier 'left)
+  (setq mac-right-control-modifier 'left)
+  ;; (global-set-key (kbd "M-`") 'ns-next-frame)
+  ;; (global-set-key (kbd "M-h") 'ns-do-hide-emacs)
+  ;; (global-set-key (kbd "M-˙") 'ns-do-hide-others)
+  ;; (with-eval-after-load 'nxml-mode
+  ;;   (define-key nxml-mode-map (kbd "M-h") nil))
+  ;; (global-set-key (kbd "M-ˍ") 'ns-do-hide-others) ;; what describe-key reports for cmd-option-h
   )
 
 
