@@ -11,4 +11,6 @@
 ;; If you're using Emacs 27, either install Modus themes or use this one!
 ;; (load-theme 'sanityinc-tomorrow-bright t)
 
+;; (require-package 'lsp-mode)
+
 (provide 'init-local)

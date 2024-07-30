@@ -34,6 +34,14 @@
 
 ;; Bootstrap config
 
+(setq package-check-signature nil)
+
+;; Hack for using a different set of repositories when ELPA is down
+;; (setq package-archives
+;;       '(("melpa" . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/melpa/")
+;;         ("org"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/org/")
+;;         ("gnu"   . "https://raw.githubusercontent.com/d12frosted/elpa-mirror/master/gnu/")))
+;; (setq package-check-signature nil) ;; probably not necessary
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (require 'init-utils)
@@ -94,6 +102,10 @@
 (require 'init-org)
 
 (require 'init-latex)
+
+(require 'init-lsp)
+
+(require 'init-treemacs)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))

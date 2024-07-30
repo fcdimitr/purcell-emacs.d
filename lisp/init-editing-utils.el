@@ -164,8 +164,8 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; Train myself to use M-f and M-b instead
-(global-unset-key [M-left])
-(global-unset-key [M-right])
+;; (global-unset-key [M-left])
+;; (global-unset-key [M-right])
 
 (defun kill-back-to-indentation ()
   "Kill from point back to the first non-whitespace character on the line."
